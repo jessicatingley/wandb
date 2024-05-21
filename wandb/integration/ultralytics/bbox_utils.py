@@ -38,7 +38,6 @@ def get_ground_truth_bbox_annotations(
     """Get ground truth bounding box annotation data in the form required for `wandb.Image` overlay system."""
     indices = batch["batch_idx"] == img_idx
     bboxes = batch["bboxes"][indices]
-    cls_labels = batch["cls"][indices].squeeze(1).tolist()
 
     class_name_map_reverse = {v: k for k, v in class_name_map.items()}
 
